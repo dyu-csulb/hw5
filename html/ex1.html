@@ -15,14 +15,12 @@
       Local References
     ==================--> 
     <link href="../css/site.css" rel="stylesheet">
-    <script src="../js/site.js"></script>
     <script src="../js/ex1.js"></script>
-
+    <script src="../js/site.js"></script>
     <title>David Yu - HW5</title>
 </head>
 
 <body>
-
     <div class="container" style="padding-top:15px;">
         <h2>
             Exercise #1: Square Class
@@ -35,12 +33,10 @@
         <a href="ex3.html" title="Click to go to example #3">Go to Exercise 3</a>
         <br />
         <hr>
-        <button class="btn btn-sm btn-primary" id=btnShowQuestion onclick="showQuestionModal()" >Ex 1: Square Class</button>
-        <button class="btn btn-sm btn-primary" id="btnOverLay"  onclick="showRequirementModal()">View Requirement</button>
+        <button class="btn btn-sm btn-primary" id="btnShowQuestion" >Ex 1: Square Class</button>
+        <button class="btn btn-sm btn-primary" id="btnOverLay">View Requirement</button>
         <br />
         <br />
-        <label id='lblMessage'></label>
-
     </div>
     <div id="myOverlay"></div>
     <!--=============================
@@ -84,41 +80,21 @@
         </table> 
         <hr />
         <div class="row ">
-            <div class="col-6 my-text-right">
-                Enter First Number: 
+            <div class="col-8 my-text-right">
+                Enter a value for the side property: 
             </div>
-            <div class="col-6"> 
-                <input type="number" class="form-control" style="width: 150px;"  id="txtNum1" name="txtNum1">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 my-text-right">
-                Enter Second Number: 
-            </div>
-            <div class="col-6">
-                <input type="number" class="form-control" style="width: 150px;"  id="txtNum2" name="txtNum2">
+            <div class="col-4"> 
+                <input type="number" class="form-control" style="width: 100%;"  id="txtNum1" name="txtNum1">
             </div>
         </div>
-        <div class="row">
-            <div class="col-6 my-text-right">
-                Select Operation: 
-            </div>
-            <div class="col-6 my-text-left" >   
-                <select name="operator" id="operator" style="width: 150px;" >
-                    <option value="1">( + ) Addition</option>
-                    <option value="2">( - ) Subtraction</option>
-                    <option value="3">( * ) Multiplication</option>
-                    <option value="4">( / ) Division</option>
-                  </select>
-            </div>
-        </div>
+
         <hr />
         <div class="row">
             <div class="col-3 my-text-right">
                 Answer: 
             </div>
             <div class="col-9 my-text-left" >   
-                <input type="text" class="form-control" style="width: 270px;"  id="txtAnswer" readonly name="txtAnswer">
+                <label id='lblMessage'></label>
             </div>
         </div>
         <hr />
