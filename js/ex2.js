@@ -1,5 +1,25 @@
 
 function myFunction() {
+    let myArray = []
+    let message = '';
+    // Load array with values 1 to 10
+    for (i = 1; i < 11; i++) {
+        myArray.push(i);
+    }
+
+    let odd = myArray.filter(number => number%2);
+
+    console.log(myArray);
+    console.log(odd);
+
+
+    
+    message ='Array values: ' +  myArray + '<br/>' + 'Odd array values:  ' + odd;
+    document.getElementById("lblMessage").innerHTML  =  message;
+}
+
+
+function myFunction1() {
     let v_radius =   document.getElementById("txtNum1").value 
     let answer = '';
     const circle = {
@@ -18,7 +38,5 @@ function myFunction() {
 }
 
 function clearValues() {
-    document.getElementById("txtNum1").value  = '';
     document.getElementById("lblMessage").innerHTML  = '';
-    document.getElementById("txtNum1").focus();
 }
