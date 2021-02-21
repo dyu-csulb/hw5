@@ -18,11 +18,26 @@ class Square {
 
 function myFunction() {
     let val = document.getElementById("txtNum1").value;
-    let obj = new Square(val);
-    let returnVal = obj.describe();
-    
-    console.log(returnVal);
-    document.getElementById("lblMessage").innerHTML  = returnVal;
+    if (isNumeric(val)==false) {
+      alert("Please enter a number value!")
+      document.getElementById("txtNum1").value  = '';
+      document.getElementById("txtNum1").focus();
+    } 
+    else {
+      let obj = new Square(val);
+      let returnVal = obj.describe();
+      
+      console.log(returnVal);
+      document.getElementById("lblMessage").innerHTML  = returnVal;
+
+    }
+
+}
+
+function isNumeric(str) {
+  if (typeof str != "string") return false
+  return !isNaN(str) && 
+         !isNaN(parseFloat(str)) 
 }
 
 
