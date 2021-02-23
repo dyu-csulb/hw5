@@ -1,43 +1,68 @@
-function myFunction() {
-    let myArray = [];
-    let values = '';
-    let sum = 0;
-    let message = ''
-    let minVal = 0;
-    let maxVal = 0;
-    
-    values = document.getElementById("txtValues").value;
 
-    if (values=='') {
-        alert('Please enter some numbers separated by comma!')
-        document.getElementById("txtValues").value  = '';
-        document.getElementById("txtValues").focus();
-    }
-    else 
+const studentList = [
     {
-        values.split(",").forEach(function (item) {
-            myArray.push(item.trim());
-        });
- 
-        for (var i = 0; i < myArray.length; i++) {
-            sum += Number(myArray[i])
-          }
+        firstName: "Allan",
+        lastName: "Able",
+        scores: [95,85,92,98]
+    },
+    {
+        firstName: "Amy",
+        lastName: "Alexander",
+        scores: [80,88,100]
+    },
+    {
+        firstName: "Betty",
+        lastName: "Barns",
+        scores: [70,80,90,100]
+    },
+    {
+        firstName: "Bob",
+        lastName: "Bones",
+        scores: [75,85,95,85]
+    },
+    {
+        firstName: "Cindy",
+        lastName: "Chase",
+        scores: [95,90,92,98]
+    },
+    {
+        firstName: "Charles",
+        lastName: "Chips",
+        scores: [88,99,90]
+    },
+];
 
-        minVal = Math.min(...myArray)
-        maxVal = Math.max(...myArray)
+function myFunction() {
+    let message = '';
+    const classResults = []
+    for (var i = 0; i < studentList.length; i++) {
+        classResults[i] = ({firstName: studentList[i].firstName, 
+                    lastName: studentList[i].lastName, 
+                    minScore: getMin(studentList[i].scores), 
+                    maxScore: getMax(studentList[i].scores), 
+                    avgScore: getAvg(i)
+                })
+         message += "[" + i + "] {firstName: " + studentList[i].firstName + ", lastName: " + studentList[i].lastName + ", minScore: " + getMin(studentList[i].scores) + ", maxScore: " + getMax(studentList[i].scores) + ", avgScore: " + getAvg(i) +  "} <br/>"     
+      }
 
-        message  += 'Sum of all array values is: ' + sum + '<br/>' + 
-                    'Minimum value of this array is: ' + minVal + '<br/>' +
-                    'Maximum value of this array is: ' + maxVal
-        document.getElementById("lblMessage").innerHTML  = message
+    console.log(classResults)
+    document.getElementById("lblMessage").innerHTML  = message;
 
-        console.log(myArray);
-        console.log(message.replaceAll("<br/>", "\n"));
-    }
+}
+
+function getMin(array) {
+    return Math.min(...array)
+}
+
+function getMax(array) {
+    return Math.max(...array)
+}
+
+function getAvg(i) {
+   let myArray = studentList[i].scores
+   return (myArray.reduce((val, el) => val + el, 0) / myArray.length);
 }
 
 function clearValues() {
-    document.getElementById("txtValues").value  = '';
     document.getElementById("lblMessage").innerHTML  = '';
-    document.getElementById("txtValues").focus();
 }
