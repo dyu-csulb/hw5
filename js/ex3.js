@@ -66,3 +66,4 @@ function getAvg(i) {
 function clearValues() {
     document.getElementById("lblMessage").innerHTML  = '';
 }
+
